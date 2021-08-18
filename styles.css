@@ -1,0 +1,17 @@
+/* body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background-color: black;
+                color: white;
+            } */
+            .planet-facts {
+                margin: 1rem;
+            }
+            .facts-container {
+                margin-top: 0.5rem;
+                border: 2pt solid white;
+            }
+            .planet-facts ul {
+                list-style: none;
+            }
