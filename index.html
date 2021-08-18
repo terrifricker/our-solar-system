@@ -6,36 +6,71 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-        <!-- <link href="planet-facts-snippet.html" rel="import"> -->
+        <style>
+            /* body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background-color: black;
+                color: white;
+            } */
+            .planet-facts {
+                margin: 1rem;
+            }
+            .facts-container {
+                margin-top: 0.5rem;
+                border: 2pt solid white;
+            }
+            .planet-facts ul {
+                list-style: none;
+            }
+        </style>
     </head>
     <body>
-        <div class="container bg-gray-100 mx-auto">
-            <header class="bg-blue-200 text-center text-blue-600 p-4">
-                header
+        <div 
+            class="col-span-3 bg-black text-gray-600 text-center font-semibold w-full h-full bg-no-repeat bg-cover bg-bottom"
+            style="background-image: url('https://cdn.pixabay.com/photo/2011/12/14/12/23/solar-system-11111_960_720.jpg');">
+            <header class="bg-black opacity-70 text-center text-yellow-700 p-4">
+                (nav bar coming soon...)
             </header>
             <section class="grid grid-cols-4 gap-2 h-96 mb-36 p-4">
-                <aside class="bg-white text-right shadow-md p-4">
-                    aside
+                <aside class="bg-black opacity-80 text-white border border-gray-800">
+                    <!-- ************
+                        Terri's code 
+                        ************* -->
+                    <section class="planet-facts planet-name" id="planet-name-facts">
+                        <h1>Planet Facts</h1>
+                        <div class="facts-container">
+                            <ul>
+                                <li>Distance from sun:</li>
+                                <li>Diameter:</li>
+                                <li>Length of year:</li>
+                                <li>Length of day:</li>
+                                <li>Average temperature:</li>
+                                <li>Gravitational pull at surface:</li>
+                            </ul>
+                        </div>
+                    </section>
                 </aside>
-                <main class="col-span-3 bg-white text-center font-semibold shadow-md p-4">
+                <main class="col-span-3 bg-black text-gray-600 text-center font-semibold border-2 border-gray-700 opacity-70">
                     <h1 class="text-5xl">
                         NASA API<br>
-                        <span class="font-extralight font-sans text-black text-xl">
+                        <span class="font-extralight font-sans text-gray-400 text-xl">
                             Escape Into the Cosmos
                         </span>
                     </h1>
                 </main>
             </section>
-            <section class="container-fluid bg-gray-300">
-                <footer class="bg-gray-300 font-light flex justify-between items-center max-w-3xl mx-auto border-b">
+            <section class="container-fluid bg-black opacity-80">
+                <footer class="bg-black opacity-80 font-light flex justify-between items-center max-w-3xl mx-auto border-b">
                 <!-- LEFT -->
                     <div class="flex items-center">
-                        <p class="text-gray-500 inline-block p-3">footer©2021</p>
+                        <p class="text-gray-400 inline-block p-3">footer©2021</p>
                     </div>
 
                 <!-- RIGHT -->
                     <div>
-                        <p class="text-gray-500 hover:text-black inline-block p-3 transition ease-in  duration-200 cursor-pointer">ver 1.0 — terri, moysser, canttell, freddy</p>
+                        <p class="text-gray-400 hover:text-black inline-block p-3 transition ease-in  duration-200 cursor-pointer">ver 1.0 — terri, moysser, canttell, freddy</p>
                     </div>
                 </footer>
             </section>
