@@ -1,1 +1,23 @@
-planet-page.css
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    display: flex;
+}
+.left-side {
+    flex: 1;
+    max-width: 50vw;
+    object-fit: contain;
+}
+.right-side {
+    flex: 1;
+    padding: 2vw;
+}
+h1 {
+    font-size: 2.5rem;
+}
+.planet-facts {
+    padding-bottom: 1vw;
+}
