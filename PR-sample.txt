@@ -1,0 +1,1 @@
+the team would like to expand the current code so the final app plays music, lets users order pizza, and streams live video at the same time. Please approve if idea is feasible. thx
