@@ -106,3 +106,24 @@
   left: 80%;
   top: 50%;
 }
+
+@media (max-width: 1260px) {
+  #solarSystem {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100%;
+    align-items: center;
+  }
+
+  #solarSystem .celestial-body {
+    position: initial;
+    margin: 2em 0 2em 0;
+  }
+
+  /* Target all the elements with class celestial-body */
+  #solarSystem .celestial-body:nth-of-type(n) {
+    transform: translate(0, 0);
+  }
+}
