@@ -1,0 +1,31 @@
+/* tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,100;1,400&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400&display=swap");
+
+:root {
+  --gray0: #f8f8f8;
+  --gray1: #dbe1e8;
+  --gray2: #b2becd;
+  --gray3: #6c7983;
+  --gray4: #454e56;
+  --gray5: #2a2e35;
+  --gray6: #12181b;
+  --purple-extra-dark: #160336;
+  --purple-dark: #2b1058;
+  --purple: #8561b2;
+  --purple-light: #b48de3;
+  --purple-extra-light: #e5bcff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "Lato", sans-serif;
+}
