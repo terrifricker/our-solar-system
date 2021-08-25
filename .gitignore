@@ -1,3 +1,6 @@
 .DS_store
 docs/collaboration.odt
 docs/contribution-guidelines.odt
+
+# temporal nodejs http server
+backend/nodejs-server
