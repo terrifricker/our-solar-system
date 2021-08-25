@@ -1,17 +1,33 @@
+import { useEffect, useState } from "react";
+import { isWebGLAvailable } from "../utils/3D";
+import { Mercury } from "./planets";
+
 import "../css/PlanetPage.css";
 
 export const PlanetPage = () => {
+  const [planet, setPlanet] = useState(null);
+
+  useEffect(() => {
+    if (isWebGLAvailable()) {
+      let planetComponent = <Mercury viewWidth={500} viewHeight={500} />;
+      setPlanet(planetComponent);
+    }
+  }, []);
+
   return (
     <main>
-      <img
-        className="left-side"
-        src={require("../images/planet-photos/mercury.jpg").default}
-        alt="Mercury against the 
+      {planet ?? (
+        <img
+          className="left-side"
+          src={require("../images/planet-photos/mercury.jpg").default}
+          alt="Mercury against the 
             black of space.  It is a medium gray with light-colored lines running primarily
             north and south, but with white spots with those light-colored lines runnning
             out away from the circle like the rays of the sun.  These lines transverse the 
             north/south lines."
-      />
+        />
+      )}
+
       <section className="right-side">
         <h1>Mercury</h1>
         <article className="planet-facts planet-name" id="planet-name-facts">
