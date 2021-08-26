@@ -1,0 +1,22 @@
+.solar-system-3d {
+  width: 100%;
+  height: 100%;
+  background-color: var(--purple-extra-dark);
+  background-image: url(../images/stars.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.solar-system-3d .title {
+  color: var(--gray0);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+
+.solar-system-3d .title > img {
+  width: 62px;
+  height: 62px;
+}

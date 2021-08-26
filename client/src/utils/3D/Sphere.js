@@ -10,6 +10,10 @@ import * as THREE from "three";
  * @property {number} [segmentsWidth]
  * @property {number} [segmentsHeight]
  * @property {boolean} [shinySurface]
+ * @property {number} [emissiveColorHex]
+ * @property {number} [emissiveIntensity]
+ * @property {string} [emissiveMapURL]
+ * @property {boolean} [transparent]
  */
 
 export class Sphere {
@@ -32,6 +36,26 @@ export class Sphere {
       materialOptions.bumpScale = sphereOptions.bumpScale;
     }
 
+    if (typeof sphereOptions.emissiveColorHex === "number") {
+      materialOptions.emissive = new THREE.Color(
+        sphereOptions.emissiveColorHex
+      );
+    }
+
+    if (typeof sphereOptions.emissiveIntensity === "number") {
+      materialOptions.emissiveIntensity = sphereOptions.emissiveIntensity;
+    }
+
+    if (typeof sphereOptions.emissiveMapURL === "string") {
+      materialOptions.emissiveMap = new THREE.TextureLoader().load(
+        sphereOptions.emissiveMapURL
+      );
+    }
+
+    if (typeof sphereOptions.transparent === "boolean") {
+      materialOptions.transparent = sphereOptions.transparent;
+    }
+
     this.mesh = new THREE.Mesh(
       new THREE.SphereBufferGeometry(
         sphereOptions.radius,
@@ -45,7 +69,7 @@ export class Sphere {
   }
 
   /**
-   * @param {Function} animationCallback
+   * @param {(mesh: THREE.Mesh) => void} animationCallback
    */
   setAnimation(animationCallback) {
     this._animationCallback = animationCallback;
@@ -54,6 +78,6 @@ export class Sphere {
   animateNextFrame() {
     if (!this._animationCallback) return;
 
-    this._animationCallback();
+    this._animationCallback(this.mesh);
   }
 }

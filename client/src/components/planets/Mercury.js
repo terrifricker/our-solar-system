@@ -1,5 +1,10 @@
 import { Renderer, Scene, Sphere } from "../../utils/3D";
 import { useRef, useEffect } from "react";
+import {
+  kMercuryBumpMapTexture,
+  kMercuryRotationSpeed,
+  kMercurySurfaceTexture,
+} from "../../utils/constants";
 
 export const Mercury = ({ viewWidth, viewHeight }) => {
   const rendererRef = useRef(
@@ -8,8 +13,8 @@ export const Mercury = ({ viewWidth, viewHeight }) => {
   const sceneRef = useRef(new Scene(rendererRef.current));
   const sphereRef = useRef(
     new Sphere({
-      mapURL: `${process.env.REACT_APP_API_ENDPOINT}/resources/textures/mercury-surface.jpg`,
-      bumpMapURL: `${process.env.REACT_APP_API_ENDPOINT}/resources/textures/mercury-bump-map.jpg`,
+      mapURL: kMercurySurfaceTexture,
+      bumpMapURL: kMercuryBumpMapTexture,
       bumpScale: 0.3,
       shinySurface: true,
     })
@@ -24,7 +29,7 @@ export const Mercury = ({ viewWidth, viewHeight }) => {
       // we squashed the velocity.
       // earth rotation speed = 0.0015
       // mercury rotation speed = 0.005
-      sphereRef.current.mesh.rotation.y += 0.005;
+      sphereRef.current.mesh.rotation.y += kMercuryRotationSpeed;
     });
 
     sceneRef.current.add(sphereRef.current);
