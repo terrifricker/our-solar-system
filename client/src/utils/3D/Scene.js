@@ -4,8 +4,10 @@ export class Scene {
   /**
    * Creates a new scene where 3D objects can be displayed.
    * @param {import("./Renderer").Renderer} renderer
+   * @param {object} [options]
+   * @param {boolean} [options.debug]
    */
-  constructor(renderer) {
+  constructor(renderer, options = {}) {
     /**
      * @type {import("./Renderer").Renderer}
      */
@@ -30,6 +32,11 @@ export class Scene {
      * @type {import("./Sphere").Sphere[]}
      */
     this._spheres = [];
+
+    if (options.debug) {
+      const axesHelper = new THREE.AxesHelper(10);
+      this._scene.add(axesHelper);
+    }
   }
 
   /**
