@@ -17,7 +17,7 @@ export const SolarSystem3D = () => {
       alpha: true,
     })
   );
-  const sceneRef = useRef(new Scene(rendererRef.current, { debug: false }));
+  const sceneRef = useRef(new Scene(rendererRef.current));
   // /**
   //  * To add intellisense
   //  * @type {MutableRefObject<Map<string, Sphere>>}
