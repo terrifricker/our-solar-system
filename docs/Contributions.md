@@ -24,7 +24,7 @@
 
 ### Fetch and merge lastest changes
 
-`git pull <remote>`, where `<remote>` can be empty if `origin` was configured or another remote repository.
+`git pull <remote> <branch-name>`, where `<remote>` can be empty if `origin` was configured or another remote repository and `<branch-name>` is the branch to fetch from.
 
 ### Get list of branches
 
@@ -38,6 +38,10 @@
 
 `git branch -d <branch-name>`
 
+### Delete local branch by force
+
+`git branch -D <branch-name>`
+
 ### Delete remote branch
 
 `git push -d <remote> <branch-name>`, where `<remote>` is the remote repository.
@@ -50,7 +54,7 @@
 
 `git checkout -b <branch-name>`
 
-### Merg local branches
+### Merge local branches
 
 The below shows an example of how this is usually done.
 
@@ -62,7 +66,11 @@ git merge branch2
 
 ### Push changes
 
-`git push <remote>`
+`git push <remote> <branch-name>`, where `<remote>` is the repository name and `<branch-name>` is the branch name to be pushed.
+
+### Setup push upstream
+
+`git push -u <remote> <branch-name>`, where `<remote>` is the repository name and `<branch-name>` is the branch name to be pushed.
 
 ### Create version tag
 
@@ -82,4 +90,5 @@ git merge branch2
 
 ### Check remote repository list
 
-`git remote -v`
+`git remote -v` verbose mode. All URLs and names will be logged in the console.
+`git remote` Only the remote repository names will be logged in the console.
