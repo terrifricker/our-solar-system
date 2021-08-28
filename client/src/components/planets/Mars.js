@@ -1,11 +1,7 @@
-import {
-  kMercuryBumpMapTexture,
-  kMercuryRotationSpeed,
-  kMercurySurfaceTexture,
-} from "../../utils/constants";
+import { kMarsProps } from "../../utils/constants";
 import { Planet } from "./Planet";
 
-export const Mercury = ({ viewWidth, viewHeight }) => {
+export const Mars = ({ viewWidth, viewHeight }) => {
   const sceneOptions = {
     orbitalControls: {
       enable: true,
@@ -15,14 +11,14 @@ export const Mercury = ({ viewWidth, viewHeight }) => {
   };
 
   const sphereOptions = {
-    mapURL: kMercurySurfaceTexture,
-    bumpMapURL: kMercuryBumpMapTexture,
+    mapURL: kMarsProps.surfaceTexture,
+    bumpMapURL: kMarsProps.bumpMapTexture,
     bumpScale: 0.3,
     shinySurface: true,
   };
 
   const animation = (mesh) => {
-    mesh.rotation.y += kMercuryRotationSpeed;
+    mesh.rotation.y += kMarsProps.rotation;
   };
 
   return (
