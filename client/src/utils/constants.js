@@ -36,6 +36,8 @@ export const kJupiterSurfaceTexture = `${process.env.REACT_APP_API_ENDPOINT}/res
 export const kSaturnSurfaceTexture = `${process.env.REACT_APP_API_ENDPOINT}/resources/textures/saturn-surface.jpeg`;
 export const kSaturnRingTexture = `${process.env.REACT_APP_API_ENDPOINT}/resources/textures/saturn-ring.png`;
 export const kUranusSurfaceTexture = `${process.env.REACT_APP_API_ENDPOINT}/resources/textures/uranus-surface.jpeg`;
+export const kUranusRingTexture = `${process.env.REACT_APP_API_ENDPOINT}/resources/textures/uranus-ring.jpg`;
+export const kUranusRingTransTexture = `${process.env.REACT_APP_API_ENDPOINT}/resources/textures/uranus-ring-trans-map.gif`;
 export const kNeptuneSurfaceTexture = `${process.env.REACT_APP_API_ENDPOINT}/resources/textures/neptune-surface.jpeg`;
 
 // compilation of props for each celestial body
@@ -90,6 +92,8 @@ export const kUranusProps = {
   radius: kUranusRadius,
   rotation: kUranusRotationSpeed,
   surfaceTexture: kUranusSurfaceTexture,
+  ringTexture: kUranusRingTexture,
+  ringTransTexture: kUranusRingTransTexture,
 };
 
 export const kNeptuneProps = {

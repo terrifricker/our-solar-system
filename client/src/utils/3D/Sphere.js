@@ -16,6 +16,11 @@ import * as THREE from "three";
  * @property {boolean} [transparent]
  */
 
+/**
+ * @typedef AnimationCallback
+ * @type {(mesh: THREE.Mesh) => void}
+ */
+
 export class Sphere {
   /**
    * Creates a new Sphere.
@@ -69,7 +74,7 @@ export class Sphere {
   }
 
   /**
-   * @param {(mesh: THREE.Mesh) => void} animationCallback
+   * @param {AnimationCallback} animationCallback
    */
   setAnimation(animationCallback) {
     this._animationCallback = animationCallback;
