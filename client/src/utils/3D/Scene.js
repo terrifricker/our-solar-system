@@ -1,13 +1,34 @@
 import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import Stats from "three/examples/jsm/libs/stats.module";
+
+/**
+ * @typedef DebugOptions
+ * @type {object}
+ * @property {boolean} axis
+ * @property {number} axisSize
+ * @property {boolean} stats
+ */
+
+/**
+ * @typedef OrbitalControlsOptions
+ * @type {object}
+ * @property {boolean} enable
+ * @property {number} maxDistance
+ * @property {number} minDistance
+ * @property {number} maxZoom
+ * @property {number} minZoom
+ */
 
 export class Scene {
   /**
    * Creates a new scene where 3D objects can be displayed.
    * @param {import("./Renderer").Renderer} renderer
    * @param {object} [options]
-   * @param {boolean} [options.debug]
+   * @param {DebugOptions} [options.debug]
+   * @param {OrbitalControlsOptions} [options.orbitalControls]
    */
-  constructor(renderer, options = {}) {
+  constructor(renderer, options) {
     /**
      * @type {import("./Renderer").Renderer}
      */
@@ -33,9 +54,40 @@ export class Scene {
      */
     this._spheres = [];
 
+    options = Object.assign(
+      {
+        debug: { axis: false, axisSize: 10, stats: false },
+        orbitalControls: {
+          enable: true,
+          maxDistance: Infinity,
+          minDistance: 0,
+          maxZoom: Infinity,
+          minZoom: 0,
+        },
+      },
+      options
+    );
+
+    this._debugHelpers = {
+      axis: options.debug.axis
+        ? new THREE.AxesHelper(options.debug.axisSize)
+        : null,
+      stats: options.debug.stats ? Stats() : null,
+    };
+
     if (options.debug) {
-      const axesHelper = new THREE.AxesHelper(10);
-      this._scene.add(axesHelper);
+      if (options.debug.axis) {
+        this._scene.add(this._debugHelpers.axis);
+      }
+
+      if (options.debug.stats) {
+        document.body.appendChild(this._debugHelpers.stats.domElement);
+      }
+    }
+
+    if (options.orbitalControls.enable) {
+      // 💩 code
+      new OrbitControls(this._camera, this._renderer._renderer.domElement);
     }
   }
 
@@ -93,5 +145,7 @@ export class Scene {
       sphere.animateNextFrame();
     }
     this._renderer._render(this._scene, this._camera);
+
+    if (this._debugHelpers.stats) this._debugHelpers.stats.update();
   }
 }
