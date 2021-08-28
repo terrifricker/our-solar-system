@@ -5,28 +5,33 @@ import Stats from "three/examples/jsm/libs/stats.module";
 /**
  * @typedef DebugOptions
  * @type {object}
- * @property {boolean} axis
- * @property {number} axisSize
- * @property {boolean} stats
+ * @property {boolean} [axis]
+ * @property {number} [axisSize]
+ * @property {boolean} [stats]
  */
 
 /**
  * @typedef OrbitalControlsOptions
  * @type {object}
- * @property {boolean} enable
- * @property {number} maxDistance
- * @property {number} minDistance
- * @property {number} maxZoom
- * @property {number} minZoom
+ * @property {boolean} [enable]
+ * @property {number} [maxDistance]
+ * @property {number} [minDistance]
+ * @property {number} [maxZoom]
+ * @property {number} [minZoom]
+ */
+
+/**
+ * @typedef SceneOptions
+ * @type {object}
+ * @property {DebugOptions} [debug]
+ * @property {OrbitalControlsOptions} [orbitalControls]
  */
 
 export class Scene {
   /**
    * Creates a new scene where 3D objects can be displayed.
    * @param {import("./Renderer").Renderer} renderer
-   * @param {object} [options]
-   * @param {DebugOptions} [options.debug]
-   * @param {OrbitalControlsOptions} [options.orbitalControls]
+   * @param {SceneOptions} [options]
    */
   constructor(renderer, options) {
     /**
@@ -87,7 +92,11 @@ export class Scene {
 
     if (options.orbitalControls.enable) {
       // 💩 code
-      new OrbitControls(this._camera, this._renderer._renderer.domElement);
+      this._controls = new OrbitControls(
+        this._camera,
+        this._renderer._renderer.domElement
+      );
+      Object.assign(this._controls, options.orbitalControls);
     }
   }
 
