@@ -1,8 +1,9 @@
-# recall-group
+# Our Solar System
 
-### A group project by the members of the discord server NASA API.
+### A collaboration by developers found around the world who found each other on Discord.
 
 A website for learning about our solar system.
+
 
 ## How to use 3D planet components 🧐
 
