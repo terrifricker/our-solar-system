@@ -4,7 +4,7 @@
   height: 100vh;
   /* in case the background image does not load */
   background-color: var(--purple-extra-dark);
-  background-image: url(../images/stars.jpg);
+  background-image: url(http://localhost:3200/resources/images/stars.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }

@@ -24,7 +24,7 @@ export const PlanetPage = () => {
       {planet ?? (
         <img
           className="left-side"
-          src={require("../images/planet-photos/mercury.jpg").default}
+          src={`${process.env.REACT_APP_API_ENDPOINT}/resources/planet-photos/mercury.jpg`}
           alt="Mercury against the 
         black of space.  It is a medium gray with light-colored lines running primarily
         north and south, but with white spots with those light-colored lines runnning
