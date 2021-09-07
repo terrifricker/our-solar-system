@@ -8,7 +8,7 @@ function App() {
     <WebGLProvider>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={SolarSystem} />
           <Route path="/solar-system" component={SolarSystem} />
           <Route path="/planet-page" component={PlanetPage} />
         </Switch>
