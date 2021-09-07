@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Home } from "./components/Home";
 import { PlanetPage } from "./components/PlanetPage";
 import { SolarSystem } from "./components/solar-system";
 import { WebGLProvider } from "./contexts/WebGLContext";
