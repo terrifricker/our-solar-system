@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "../../css/SolarSystem2D.css";
 
 export const SolarSystem2D = () => {
@@ -11,67 +13,85 @@ export const SolarSystem2D = () => {
         />
       </h1>
       <div className="celestial-body sun">
-        <img
-          src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/sun.png`}
-          alt="Sun"
-        />
-        <span>sun</span>
+        <Link to="/info-page?star=sun">
+          <img
+            src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/sun.png`}
+            alt="Sun"
+          />
+          <span>sun</span>
+        </Link>
       </div>
       <div className="celestial-body mercury">
-        <img
-          src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/mercury.png`}
-          alt="Mercury"
-        />
-        <span>mercury</span>
+        <Link to="/info-page?planet=mercury">
+          <img
+            src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/mercury.png`}
+            alt="Mercury"
+          />
+          <span>mercury</span>
+        </Link>
       </div>
       <div className="celestial-body venus">
-        <img
-          src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/venus.png`}
-          alt="Venus"
-        />
-        <span>venus</span>
+        <Link to="/info-page?planet=venus">
+          <img
+            src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/venus.png`}
+            alt="Venus"
+          />
+          <span>venus</span>
+        </Link>
       </div>
       <div className="celestial-body earth">
-        <img
-          src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/venus.png`}
-          alt="Earth"
-        />
-        <span>earth</span>
+        <Link to="/info-page?planet=earth">
+          <img
+            src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/earth.png`}
+            alt="Earth"
+          />
+          <span>earth</span>
+        </Link>
       </div>
       <div className="celestial-body mars">
-        <img
-          src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/mars.png`}
-          alt="Mars"
-        />
-        <span>mars</span>
+        <Link to="/info-page?planet=mars">
+          <img
+            src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/mars.png`}
+            alt="Mars"
+          />
+          <span>mars</span>
+        </Link>
       </div>
       <div className="celestial-body jupiter">
-        <img
-          src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/jupiter.png`}
-          alt="Jupiter"
-        />
-        <span>jupiter</span>
+        <Link to="/info-page?planet=jupiter">
+          <img
+            src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/jupiter.png`}
+            alt="Jupiter"
+          />
+          <span>jupiter</span>
+        </Link>
       </div>
       <div className="celestial-body saturn">
-        <img
-          src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/saturn.png`}
-          alt="Saturn"
-        />
-        <span>saturn</span>
+        <Link to="/info-page?planet=saturn">
+          <img
+            src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/saturn.png`}
+            alt="Saturn"
+          />
+          <span>saturn</span>
+        </Link>
       </div>
       <div className="celestial-body uranus">
-        <img
-          src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/uranus.png`}
-          alt="Uranus"
-        />
-        <span>uranus</span>
+        <Link to="/info-page?planet=uranus">
+          <img
+            src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/uranus.png`}
+            alt="Uranus"
+          />
+          <span>uranus</span>
+        </Link>
       </div>
       <div className="celestial-body neptune">
-        <img
-          src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/neptune.png`}
-          alt="Neptune"
-        />
-        <span>neptune</span>
+        <Link to="/info-page?planet=neptune">
+          <img
+            src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/neptune.png`}
+            alt="Neptune"
+          />
+          <span>neptune</span>
+        </Link>
       </div>
     </section>
   );
