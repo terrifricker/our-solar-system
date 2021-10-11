@@ -2,27 +2,18 @@ import { useEffect, useState } from "react";
 import { isWebGLAvailable } from "../utils/3D";
 import { getPlanet } from "./planets";
 import { useQuery } from "../hooks/useQuery";
-import { Sun } from "./Sun";
 
-import "../css/InfoPage.css";
+import "../css/PlanetPage.css";
 
-export const InfoPage = () => {
-  const [celestialBody, setCelestialBody] = useState(null);
+export const PlanetPage = () => {
+  const [planet, setPlanet] = useState(null);
   const query = useQuery();
 
   useEffect(() => {
     if (isWebGLAvailable()) {
-      setCelestialBody(() => {
-        let querystring = query.get("planet"); // try to get a planet query
-
-        // if no planet query then try to get query for a star. i.e: sun
-        if (!querystring && (querystring = query.get("star"))) {
-          // when this block is run, then the query is for a star, the sun
-          return <Sun viewWidth={500} viewHeight={500} />;
-        }
-
+      setPlanet(() => {
         // default component to earth
-        let PlanetComponent = getPlanet(querystring ?? "earth");
+        let PlanetComponent = getPlanet(query.get("planet") ?? "earth");
         return <PlanetComponent viewWidth={500} viewHeight={500} />;
       });
     }
@@ -30,7 +21,7 @@ export const InfoPage = () => {
 
   return (
     <main>
-      {celestialBody ?? (
+      {planet ?? (
         <img
           className="left-side"
           src={`${process.env.REACT_APP_API_ENDPOINT}/resources/planet-photos/mercury.jpg`}

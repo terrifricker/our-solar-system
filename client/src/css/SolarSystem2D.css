@@ -27,17 +27,17 @@
   cursor: pointer;
 }
 
-#solarSystem .celestial-body > a > img {
+#solarSystem .celestial-body > img {
   width: 100%;
   height: 100%;
   transition: all 0.3s ease;
 }
 
-#solarSystem .celestial-body:hover > a > img {
+#solarSystem .celestial-body:hover > img {
   transform: scale(1.1, 1.1);
 }
 
-#solarSystem .celestial-body > a > span {
+#solarSystem .celestial-body > span {
   text-align: center;
   text-transform: uppercase;
   color: var(--gray2);

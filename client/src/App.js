@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { InfoPage } from "./components/InfoPage";
+import { PlanetPage } from "./components/PlanetPage";
 import { SolarSystem } from "./components/solar-system";
 import { WebGLProvider } from "./contexts/WebGLContext";
 
@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={SolarSystem} />
-          <Route path="/info-page" component={InfoPage} />
+          <Route path="/planet-page" component={PlanetPage} />
         </Switch>
       </BrowserRouter>
     </WebGLProvider>

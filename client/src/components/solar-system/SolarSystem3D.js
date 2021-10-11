@@ -299,7 +299,7 @@ export const SolarSystem3D = () => {
       <h1 className="title">
         <span>Our Solar System</span>
         <img
-          src={`${process.env.REACT_APP_API_ENDPOINT}/resources/fallback-icons/orbit.png`}
+          src={require("../../images/fallback-icons/orbit.png").default}
           alt="Orbit"
         />
       </h1>
